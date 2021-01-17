@@ -192,30 +192,30 @@ namespace EmpApi.Controllers
 
         [HttpGet]
         [Route("Employee/IsEmail/Email")]
-        public string IsEmail(string Email)
-        {
-            // Using Connection String From Web Configuration File
-            string Con = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            SqlConnection DbCon = new SqlConnection(Con);
-            DbCon.Open();  //Opening Connection for Database
-            string GetEmailData = "IsEmail";
-            SqlCommand cmd = new SqlCommand(GetEmailData, DbCon)
-            {
-                CommandType = CommandType.StoredProcedure
-            };
-            cmd.Parameters.AddWithValue("@Email", Email);
+        //public string IsEmail(string Email)
+        //{
+        //    // Using Connection String From Web Configuration File
+        //    string Con = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+        //    SqlConnection DbCon = new SqlConnection(Con);
+        //    DbCon.Open();  //Opening Connection for Database
+        //    string GetEmailData = "IsEmail";
+        //    SqlCommand cmd = new SqlCommand(GetEmailData, DbCon)
+        //    {
+        //        CommandType = CommandType.StoredProcedure
+        //    };
+        //    cmd.Parameters.AddWithValue("@Email", Email);
 
-            int res = cmd.ExecuteNonQuery();
-            if (res > 0)
-            {
-                return "Is a Valid";
-            }
-            else
-            {
-                return "Not Found";
-            }
+        //    int res = cmd.ExecuteNonQuery();
+        //    if (res > 0)
+        //    {
+        //        return "Is a Valid";
+        //    }
+        //    else
+        //    {
+        //        return "Not Found";
+        //    }
 
-        }
+        //}
 
     }
 }

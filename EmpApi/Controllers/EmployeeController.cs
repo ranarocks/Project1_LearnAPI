@@ -206,14 +206,14 @@ namespace EmpApi.Controllers
             cmd.Parameters.AddWithValue("@Email", Email);
 
             int res = cmd.ExecuteNonQuery();
-            if (res > 0)
-            {
-                return "Is a Valid";
-            }
-            else
-            {
-                return "Not Found";
-            }
+            //if (res > 0)
+            //{
+            //    return "Is a Valid";
+            //}
+            //else
+            //{
+            //    return "Not Found";
+            //}
 
         }
 

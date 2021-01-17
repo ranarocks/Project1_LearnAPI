@@ -165,7 +165,7 @@ namespace EmpApi.Controllers
             {
                 CommandType = CommandType.StoredProcedure
             };
-            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@Email", Email); 
             cmd.Parameters.AddWithValue("@Username", Username);
             SqlDataReader rdr = cmd.ExecuteReader();
             List<Employee> Emp = new List<Employee>();

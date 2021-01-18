@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 
 namespace EmpApi.Models
 {
@@ -15,9 +15,6 @@ namespace EmpApi.Models
         public string City { get; set; }
         public string Pincode { get; set; }
         public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-
-
 
     }
 
@@ -34,22 +31,18 @@ namespace EmpApi.Models
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
     }
+    public class ReturnObject
+    {
+        public List<Employee> ListEmployee { get; set; }
+        public string Message { get; set; }
+    }
+    public class ReturnMessage
+    {
+        public string Message { get; set; }
+    }
+    public class Ismail
+    {
+        public Boolean IsEmail { get; set; }
+    }
 
-    //public class Read : Employee
-    //{
-    //    public Read (DataRow row)
-    //    {
-    //        ID = Convert.ToInt32(row["ID"]);
-    //        FullName = row["FullName"].ToString();
-    //        Email = row["Email"].ToString();
-    //        Address = row["Address"].ToString();
-    //        ContactNumber = row["ContactNumber"].ToString();
-    //        Country = row["Country"].ToString();
-    //        State = row["State"].ToString();
-    //        City = row["City"].ToString();
-    //        Pincode = row["Pincode"].ToString();
-    //        Password = row["Password"].ToString();
-    //    }
-
-    //}
 }

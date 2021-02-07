@@ -31,6 +31,12 @@ namespace EmpApi.Models
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
     }
+
+    public class LoginCheck
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
     public class ReturnObject
     {
         public List<Employee> ListEmployee { get; set; }
@@ -44,5 +50,6 @@ namespace EmpApi.Models
     {
         public Boolean IsEmail { get; set; }
     }
+
 
 }

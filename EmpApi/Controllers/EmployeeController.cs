@@ -33,12 +33,12 @@ namespace EmpApi.Controllers
 
         }
 
-        [HttpGet]
-        [Route("Employee/CredentialCheck/Email/Password")]
-        public ReturnObject CredentialCheck(string Email, string Password)
+        [HttpPost]
+        [Route("Employee/CredentialCheck")]
+        public ReturnObject CredentialCheck(LoginCheck login )
         {
             EmployeeRegLogic employeeRegLogic = new EmployeeRegLogic();
-            return employeeRegLogic.CredentialCheck(Email, Password);
+            return employeeRegLogic.CredentialCheck(login);
         }
 
         [HttpGet]
@@ -58,6 +58,7 @@ namespace EmpApi.Controllers
             return employeeRegLogic.IsEmail(Email);
 
         }
+
 
     }
 }

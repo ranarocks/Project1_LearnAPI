@@ -23,10 +23,10 @@ namespace EmpApi.Business_Logic
             return employeeDetailsObj.PostDataLogic(InsertEmp);
         }
 
-        public ReturnObject CredentialCheck(string Email, string Password)
+        public ReturnObject CredentialCheck(LoginCheck login)
         {
             EmployeeDetails employeeDetailsObj = new EmployeeDetails();
-            return employeeDetailsObj.CredentialCheckLogic(Email, Password);
+            return employeeDetailsObj.CredentialCheckLogic(login);
         }
         public List<Employee> CheckEmailOrUsername(string Email, string Username)
         {

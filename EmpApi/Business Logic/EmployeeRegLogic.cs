@@ -1,25 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
+﻿using EmpApi.DataAccessLayer;
 using EmpApi.Models;
-using System.Web.Http;
+using System.Collections.Generic;
 
 namespace EmpApi.Business_Logic
 {
     public class EmployeeRegLogic
     {
-        //public List<Employee> GetEmployeeData()
-        //{
-            
-        //}
+        public List<Employee> GetDetails()
+        {
+            EmployeeDetails employeedetailsObj = new EmployeeDetails();
+            return employeedetailsObj.GetDataReg();
+        }
 
-        //public void Post([FromBody] PostEmployee)
-        //{
+        public ReturnObject GetDetailsEmailReg(string Email)
+        {
+            EmployeeDetails employeedetailsObj = new EmployeeDetails();
+            return employeedetailsObj.GetDetailsByEmail(Email);
+        }
+        public ReturnMessage PostData(PostEmployee InsertEmp)
+        {
+            EmployeeDetails employeeDetailsObj = new EmployeeDetails();
+            return employeeDetailsObj.PostDataLogic(InsertEmp);
+        }
 
-        //}
+        public ReturnObject CredentialCheck(LoginCheck login)
+        {
+            EmployeeDetails employeeDetailsObj = new EmployeeDetails();
+            return employeeDetailsObj.CredentialCheckLogic(login);
+        }
+        public List<Employee> CheckEmailOrUsername(string Email, string Username)
+        {
+            EmployeeDetails employeeDetailsObj = new EmployeeDetails();
+            return employeeDetailsObj.CheckEmailOrUsernameLogic(Email, Username);
+        }
+        public Ismail IsEmail(string Email)
+        {
+            EmployeeDetails employeeDetailsObj = new EmployeeDetails();
+            return employeeDetailsObj.IsEmailLogic(Email);
+        }
 
     }
 }
